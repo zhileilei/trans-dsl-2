@@ -21,6 +21,14 @@ include_directories(
         "${CMAKE_CURRENT_SOURCE_DIR}/tests/pt"
 )
 
+include(${PROJECT_SOURCE_DIR}/cmake/CPM.cmake)
+
+CPMAddPackage(
+    NAME cctest
+    GITHUB_REPOSITORY ccup/cctest
+    GIT_TAG master
+)
+
 LINK_DIRECTORIES(/usr/local/lib)
 
 add_library(trans-dsl-2 STATIC
